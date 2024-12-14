@@ -10,6 +10,7 @@
 
   --primary-bg-color: #111217;
   --secondary-bg-color: #FFA500;
+
   --primary-border-color: #28292E;
 	--secondary-border-color: #56575A;
 
@@ -468,7 +469,7 @@ main {
 }
 
 .accordion__header span {
-  color: var(--title-color);
+  color: var(--primary-color);
 }
 
 .accordion__header.start {
@@ -495,6 +496,7 @@ main {
 
 .accordion__item.active .accordion__header {
   background: var(--secondary-bg-color);
+  color: var(--primary-color);
 }
 
 .accordion__item.active .accordion__body {
