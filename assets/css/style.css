@@ -4,19 +4,28 @@
 :root, :root[data-theme='dark'] {
   --primary-color: #F0F0F0;
 
+  --header: #FF6A13;;
+  --header-text-color: #F0F0F0;
+  --header-text-hover: #F0F0F0;
+
   --primary-bg-color: #111217;
-  --secondary-bg-color: #28292E;
+  --secondary-bg-color: #FFA500;
   --primary-border-color: #28292E;
 	--secondary-border-color: #56575A;
 
-  --title-color: #F0F0F0;
+  --title-color: #FFA500;
   --text-color: #9A9A9C;
   --link-color: #9A9A9C;
   --icon-color: #C7C8C9;
+  --arrow-icon-color: #FFA500;
 }
 
 :root[data-theme='light'] {
   --primary-color: #0B0B0F;
+
+  --header: #eeeded;
+  --header-text-color: #0B0B0F;
+
 
 	--primary-bg-color: #E9E9E9;
 	--secondary-bg-color: #C7C8C9;
@@ -43,27 +52,14 @@ html[data-theme='light'] .technologies__logo {
   box-sizing: border-box;
   vertical-align: baseline;
   list-style: none;
-  scrollbar-width: thin;
-  scrollbar-color: var(--secondary-bg-color) transparent;
+
+
 }
 
 body {
   background: var(--primary-bg-color);
   font-family:'Inter', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
-}
-
-::-webkit-scrollbar {
-  width: 0.5rem;
-}
-
-::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--secondary-bg-color);
-  border-radius: 50rem;
 }
 
 a {
@@ -123,6 +119,7 @@ p {
 }
 
 .header {
+  background-color: var(--header);
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -183,11 +180,13 @@ p {
 .menu__link.active .menu__text,
 .menu__link:hover .menu__icon, 
 .menu__link:hover .menu__text {
-  color: var(--primary-color);
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
 }
 
 .menu__icon, .menu__text {
-  color: var(--text-color);
+  color: var(--header-text-color);
+  font-weight: 700;
 }
 
 .menu__icon {
@@ -204,11 +203,17 @@ p {
 }
 
 .menu--principal {
+  background-color: var(--header);
   gap: 1rem;
 }
 
 .menu--social {
   gap: 1rem;
+}
+
+.bi-arrow-up-right,
+.bi-arrow-down-right{
+  color: var(--arrow-icon-color);
 }
 
 .btn {
@@ -237,11 +242,11 @@ p {
 }
 
 .btn--primary span {
-  color: var(--primary-color);
+  color: var(--secondary-bg-color);
 }
 
 .btn--primary {
-  border: 1px solid var(--primary-color);
+  border: 1px solid var(--secondary-bg-color);
 }
 
 main, .projects, .about, .contact {
@@ -276,6 +281,10 @@ main {
   margin-top: -5.5rem;
 }
 
+.technologies h2{
+  color: var(--primary-color);
+}
+
 .technologies h2 {
   font-size: 2rem;
   text-transform: none;
@@ -297,7 +306,7 @@ main {
   width: 4.8rem;
   height: 4.8rem;
   aspect-ratio: 1/1;
-  border: 1px solid var(--secondary-border-color);
+  border: 1px solid var(--primary-color);
   border-radius: 50rem;
 }
 
@@ -343,7 +352,7 @@ main {
 }
 
 .card__description {
-  color: var(--title-color);
+  color: var(--text-color);
 }
 
 .card__list, .about__list {
@@ -534,7 +543,7 @@ footer p {
     position: fixed;
     border-bottom: 1px solid var(--primary-border-color);
     padding: 1rem 6rem;
-    background: var(--primary-bg-color);
+    background: var(--header);
   }
 
   .nav--mobile {
