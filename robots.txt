@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
-
+Disallow: /private/
 Sitemap: https://pedroallysson.github.io/portfolio/sitemap.xml
+
